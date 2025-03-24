@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Dia dos Namorados</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #030122, #060008); /* Gradiente de cor de fundo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeito de brilho espalhado por toda a tela */
+        .shine {
+            position: absolute;
+            font-size: 30px;
+            animation: rain 2s infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes rain {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+
+        /* Cria a animação variada */
+        .shine:nth-child(odd) {
+            animation-duration: 2.5s;
+            animation-delay: 0s;
+        }
+
+        .shine:nth-child(even) {
+            animation-duration: 3s;
+            animation-delay: 1s;
+        }
+
+        /* Espalha os brilhos em diferentes posições */
+        .shine:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shine:nth-child(2) {
+            left: 30%;
+            animation-delay: 0.2s;
+        }
+
+        .shine:nth-child(3) {
+            left: 50%;
+            animation-delay: 0.4s;
+        }
+
+        .shine:nth-child(4) {
+            left: 70%;
+            animation-delay: 0.6s;
+        }
+
+        .shine:nth-child(5) {
+            left: 90%;
+            animation-delay: 0.8s;
+        }
+
+        .shine:nth-child(6) {
+            left: 15%;
+            animation-delay: 1.0s;
+        }
+
+        .shine:nth-child(7) {
+            left: 35%;
+            animation-delay: 1.2s;
+        }
+
+        .shine:nth-child(8) {
+            left: 55%;
+            animation-delay: 1.4s;
+        }
+
+        .shine:nth-child(9) {
+            left: 75%;
+            animation-delay: 1.6s;
+        }
+
+        .shine:nth-child(10) {
+            left: 85%;
+            animation-delay: 1.8s;
+        }
+
+        .card {
+            background-color: #17021f8a;
+            width: 500px;  /* Aumentei a largura */
+            height: 800px;  /* Aumentei a altura */
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .heart {
+            font-size: 40px;
+            color: #e91e63;
+            margin-top: 20px;
+        }
+
+        .text {
+            font-size: 24px;
+            color: #fdfdfd;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            background-color: #e91e63;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #c2185b;
+        }
+
+        .photo-container {
+            margin-top: 20px;
+        }
+
+        .photo-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .counter {
+            margin-top: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .counter span {
+            color: #ffffff;
+            margin: 0 5px;
+        }
+
+        /* Ajusta o player para não ocupar espaço excessivo */
+        .spotify-player iframe {
+            width: 100%;
+            height: 80px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Brilho espalhado por toda a tela -->
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+    <div class="shine">✨</div>
+
+    <div class="card">
+        <!-- Spotify Embed Player (Música de sua escolha) -->
+        <div class="spotify-player">
+            <iframe src="https://open.spotify.com/embed/track/7MQJYm0QPF2Vf0UtzKapSc" width="100%" height="80" frameborder="0" allow="encrypted-media"></iframe>
+        </div>
+
+        <div class="heart">❤️</div>
+        
+        <!-- Frases dentro da carta -->
+        <div class="message">
+            <p>Fiz isso aqui</p>
+            <p>Pra você nunca se esquecer do quanto é especial pra mim</p>
+        </div>
+
+        <!-- Opção de foto -->
+        <div class="photo-container">
+            <img src="img/2.jpeg" alt="Foto Especial">
+        </div>
+
+        <!-- Contador automático -->
+        <div class="counter">
+            <p>Te amo há:</p>
+            <div id="contador"></div>
+        </div>
+
+        <!-- Botão para redirecionar para flower.html -->
+        <div class="button-container">
+            <a href="flower.html">❤️ clica ❤️</a>
+        </div>
+    </div>
+
+    <script>
+        // Data de início para o contador
+        const dataDeInicio = new Date('2024-12-22T00:00:00');
+
+        // Função para atualizar o contador
+        function atualizarContador() {
+            const agora = new Date();
+            const tempoDecorrido = agora - dataDeInicio;
+
+            // Calcular o tempo decorrido em segundos, minutos, horas e meses
+            const segundos = Math.floor(tempoDecorrido / 1000);
+            const minutos = Math.floor(segundos / 60);
+            const horas = Math.floor(minutos / 60);
+            const dias = Math.floor(horas / 24);
+            const meses = Math.floor(dias / 30); // Aproximação de meses
+
+            const mesesRestantes = meses % 12;
+            const diasRestantes = dias % 30;
+            const horasRestantes = horas % 24;
+            const minutosRestantes = minutos % 60;
+            const segundosRestantes = segundos % 60;
+
+            // Atualizar o conteúdo do contador para mostrar tudo numa linha
+            document.getElementById('contador').innerHTML = `
+                <span>${mesesRestantes}</span> meses, 
+                <span>${diasRestantes}</span> dias, 
+                <span>${horasRestantes}</span> horas, 
+                <span>${minutosRestantes}</span> minutos, 
+                <span>${segundosRestantes}</span> segundos
+            `;
+        }
+
+        // Atualizar o contador a cada segundo
+        setInterval(atualizarContador, 1000);
+    </script>
+
+</body>
+
+</html>
